@@ -53,7 +53,7 @@ module ``Miscellaneous tests`` =
         let offset = editor.Text.IndexOf("Coll")
         editor.RemoveText(offset,4) // delete "Coll"
         editor.InsertText(editor.CaretOffset, "Collections")
-        let config = Config.Default
+        let config = { insertModeEscapeKey = None }
         let _, newState, _ = sendKeysToEditor editor "<esc>j." config
         let text = getEditorText editor newState
 
