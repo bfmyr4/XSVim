@@ -7,7 +7,7 @@ module ``Key parsing tests`` =
     let test keys =
         let keys = [for c in keys -> Key c]
         let state = { VimState.Default with keys=keys }
-        let config = Config.Default
+        let config = { insertModeEscapeKey = None }
         let action, _state = Vim.parseKeys state config
         let first = action.Head
 
